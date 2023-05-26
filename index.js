@@ -43,7 +43,9 @@ for(let i = 0; i< 5; i++){
             k = 0;
             while(m + k < 5){
                 str += grid[i][m+k];
-                console.log(`BW -> BE | ${str}`);                                
+                if(str.length > 4){
+                    console.log(`BW -> BE | ${str}`);     
+                }                           
                 k++;
             }
         }
@@ -104,7 +106,9 @@ for(let i = 0; i< 5; i++){
             k = 0;
             while(l + k < 5 && m + k < 5){
                 str += grid[l+k][m+k];
-                console.log(`BNW-> SE | ${str}`);                                
+                if(str.length > 4){
+                    console.log(`BNW-> SE | ${str}`);  
+                }                              
                 k++;
             }
         }
@@ -139,7 +143,7 @@ for(let i = 0; i< 5; i++){
         if(l < 5 && m < 5){
             str = "";
             k = 0;
-            while(i - k > -1 && j - k > -1){
+            while(l - k > -1 && m - k > -1){
                 str += grid[l-k][m-k];
                 if(str.length == 8){
                     console.log(`BSE-> NW | ${str}`);     
@@ -166,7 +170,9 @@ for(let i = 0; i< 5; i++){
             k = 0;
             while(l + k < 5){
                 str += grid[l+k][j];
-                console.log(`BN -> S  | ${str}`);                                
+                if(str.length > 4){
+                    console.log(`BN -> S  | ${str}`);  
+                }                              
                 k++;
             }
         }
@@ -209,13 +215,6 @@ for(let i = 0; i< 5; i++){
             }
         }
 
-                
-        //
-        //
-        //
-        //
-        //
-
         // North-East to South-West
         str = "";
         k = 0;
@@ -234,7 +233,9 @@ for(let i = 0; i< 5; i++){
             k = 0;
             while(l + k < 5 && m - k > -1){
                 str += grid[l+k][m-k];
-                console.log(`BNE-> SW | ${str}`);                                
+                if(str.length > 4){
+                    console.log(`BNE-> SW | ${str}`);  
+                }                              
                 k++;
             }
         }
@@ -269,8 +270,8 @@ for(let i = 0; i< 5; i++){
         if(l < 5 && m > -1){
             str = "";
             k = 0;
-            while(i - k > -1 && j + k < 5){
-                str += grid[i-k][j+k];
+            while(l - k > -1 && m + k < 5){
+                str += grid[l-k][m+k];
                 if(str.length == 8){
                     console.log(`BSW-> NE | ${str}`);  
                 }                              
