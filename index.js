@@ -1,4 +1,4 @@
-// v0.1 - 26-5-2023 Jake Knox
+// v1.0 - 26-5-2023 Jake Knox
 
 let grid = 
 [
