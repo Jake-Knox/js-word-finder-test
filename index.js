@@ -15,43 +15,86 @@ for(let i = 0; i< 5; i++){
     // console.log(1);
 
     for(let j = 0; j< 5; j++){
-        // console.log(2);
-
         console.log(2);
+        console.log(grid[i][j]);
 
+        // West to East
         str = "";
         let k = 0;
         while(grid[i][j+k]){
             // console.log(3);
-
             str += grid[i][j+k];
-            console.log(`W- -> E- | ${str}`);
-
+            if(str.length > 2){
+                console.log(`W- -> E- | ${str}`);
+            }
             k++;
         }
 
-        str = "";
-        k = 0;
-        while(i + k < 5){
-            str += grid[i+k][j];
-            console.log(`N- -> S- | ${str}`);
-
-            k++;
-        }
-        
-        
+        // North-West to South-East
         str = "";
         k = 0;
         while(i + k < 5 && j + k < 5){
             str += grid[i+k][j+k];
-            console.log(`NW -> EE | ${str}`);
-
+            if(str.length > 2){
+                console.log(`NW -> SE | ${str}`);
+            }
             k++;
         }
 
+        // North to South
+        str = "";
+        k = 0;
+        while(i + k < 5){
+            str += grid[i+k][j];
+            if(str.length > 2){
+                console.log(`N- -> S- | ${str}`);
+            }
+            k++;
+        }
+                
+        // North-East to South-West
+        str = "";
+        k = 0;
+        while(i + k < 5 && j - k > -1){
+            str += grid[i+k][j-k];
+            if(str.length > 2){
+                console.log(`NE -> SW | ${str}`);
+            }
+            k++;
+        }
 
+        // East to West
+        str = "";
+        k = 0;
+        while(j - k > -1){
+            str += grid[i][j-k];
+            if(str.length > 2){
+                console.log(`E- -> W- | ${str}`);
+            }
+            k++;
+        }
 
+        // South-East to North-West
+        str = "";
+        k = 0;
+        while(i - k > -1 && j - k > -1){
+            str += grid[i-k][j-k];
+            if(str.length > 2){
+                console.log(`SE -> NW | ${str}`);
+            }
+            k++;
+        }
 
+        // South to North
+        str = "";
+        k = 0;
+        while(i - k > -1){
+            str += grid[i-k][j];
+            if(str.length > 2){
+                console.log(`S- -> N- | ${str}`);
+            }
+            k++;
+        }
 
 
 
